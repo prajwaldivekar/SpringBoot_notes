@@ -1,0 +1,102 @@
+
+**This is AppApplication.java file **
+
+-------------------------------------------------------
+//Proper code for manually making object
+package com.prajwaldivekar.App;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AppApplication {
+
+	public static void main(String[] args) {
+
+		SpringApplication.run(AppApplication.class, args);
+		dev build = new dev();   // Creating object manually without using SpringBoot. This is not perfered Way...!
+		build.create();
+
+	}
+
+}
+--------------------------------------------
+
+**This is Dev.java file**
+
+//Proper code 
+package com.prajwaldivekar.App;
+
+public class dev {
+    public  void create(){
+        System.out.println("Create something...!");
+    }
+}
+
+-------------- Now we have to run this file ---------------------
+we can run this AppApplication.java file.
+In this we make a Object dev.java file manually..! Not using Spring.
+
+
+
+Now we have to not make manually object 
+So making automatic object using spring
+
+ApplicationContext context = SpringApplication.run(AppApplication.class, args);
+    dev obj = context.getBean(dev.class);
+
+**Why Do We Use ApplicationContext?
+Because Spring Boot follows Dependency Injection, we don't create objects manually using new. Instead, we let Spring do that work for us.
+
+**Instead of manually creating objects using new, we let Spring Boot handle it.
+This is done using Dependency Injection (DI), and the ApplicationContext is the component that makes DI possible.**
+
+Example:
+
+ApplicationContext context = SpringApplication.run(MyApp.class, args);
+MyBean obj = context.getBean(MyBean.class);
+
+the final code
+
+--------------------------------------------
+//Proper code with using spring to make a object
+package com.prajwaldivekar.App;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class AppApplication {
+
+	public static void main(String[] args) {
+
+		ApplicationContext context = SpringApplication.run(AppApplication.class, args);
+             dev obj = context.getBean(dev.class);
+	}
+
+}
+-------------------------------------------------
+
+dev.java file
+//Proper code
+-----------------------------------------------
+
+package com.prajwaldivekar.App;
+
+import org.springframework.stereotype.Component;
+
+@Component  // to tell spring manage this class
+public class dev {
+    public  void create(){
+        System.out.println("Create something...!");
+    }
+}
+-------------------------------------------
+
+**Why do we use @Component?
+We use it to tell Spring:
+
+"Make this class available for Dependency Injection"
+
+"Don't make me write new — you create and manage it"

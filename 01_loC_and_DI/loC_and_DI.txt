@@ -1,0 +1,60 @@
+1. What is LoC (Line of Code)?
+LoC means Lines of Code.
+
+*  It is just a count of how many lines of code you write in a program or project.
+* It helps to measure the size of the project, and sometimes, how complex or maintainable it is.
+
+* In Spring Boot, we usually write less LoC compared to traditional Java projects, because Spring Boot 
+provides a lot of pre-built features (like auto-configuration).
+
+
+2. What is DI (Dependency Injection)?
+DI stands for Dependency Injection.
+
+Imagine:
+
+You are building a car. The car needs an engine. You can either make the engine inside the car or give it (inject it) from outside. Giving from outside = Dependency Injection.
+
+In code:
+
+Instead of creating objects manually using new, Spring Boot automatically provides the required objects.
+
+
+
+Example->
+
+{//Explination of  @Component  Tells Spring Boot: 
+"Hey, this class is a component! Please manage this object for me.
+"Spring will create objects (beans) of this class automatically.//}
+
+
+
+@Component
+public class Engine {
+    public void start() {
+        System.out.println("Engine started!");
+    }
+}
+
+@Component
+public class Car {
+    private Engine engine;
+
+    @Autowired // Spring will inject Engine object here
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+
+
+{//Explination of  @Autowired
+Tells Spring:
+
+"Inject the Engine object into the Car constructor automatically."
+
+Spring finds a bean of type Engine (which it already created because of @Component) and gives it to the Car. //}
