@@ -1,0 +1,76 @@
+//This is AppApplication file
+
+package com.prajwaldivekar.App;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
+public class AppApplication {
+
+	public static void main(String[] args) {
+
+		ApplicationContext context = SpringApplication.run(AppApplication.class, args);
+             Devo obj = context.getBean(Devo.class);
+			 obj.create();
+	}
+
+}
+
+----------------------------------------------------------------------------------------------------
+//This is Devo file --> // this is comment section you can uncomment it..!
+
+package com.prajwaldivekar.App;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Devo {
+
+//    --> This is Field injection
+    @Autowired
+    private computer macbook;
+
+//    --> This is Constructor injection  @Autowired is optional in Constructor injection
+//    public Devo(computer macbook){
+//        this.macbook=macbook;
+//    }
+
+
+//    This is Setter injection  @Autowired in recommened
+//    @Autowired
+//    public void setComputer(computer macbook){
+//        this.macbook=macbook;
+//    }
+
+//     In now a days Constructor and setter methid id recommended
+
+    public void create(){
+
+        macbook.compile();
+        System.out.println("Creating somthing new..!");
+
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+
+package com.prajwaldivekar.App;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class computer {
+
+
+    public void compile(){
+
+        System.out.println("We offer you a MacBook Pro");
+    }
+}
+
+

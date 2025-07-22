@@ -1,0 +1,33 @@
+ ** What is @Autowired?
+--@Autowired is an annotation in Spring used for automatic dependency injection.
+
+--It tells Spring to automatically create and provide the required object (bean) when needed.
+
+--No need to use new keyword to create objects manually.
+
+-----------------------------------------------------------------------------------------------------------
+
+ Why Use @Autowired? (In an Easy Way)
+**Imagine This:
+You are building a Car. A car needs an Engine to run.
+
+Now, you have 2 choices:
+
+You create the engine yourself → new Engine()
+
+You tell someone (Spring) to give you a ready engine → @Autowired
+
+-------------------------------------------------------------------------------------------
+
+**Summary
+@Autowired automatically gives you the object you need.
+
+You don’t need to write new ClassName().
+
+Makes your code clean, modular, and flexible.
+
+Helps in Dependency Injection (DI).
+
+Used in @Component, @Service, @Controller, etc.
+
+
