@@ -1,0 +1,32 @@
+In Spring Boot , the @Entity annotation is used to mark a class as a JPA entity. 
+A JPA entity represents a table in a relational database, and each instance of the class corresponds to a row in that table.
+
+ ** IF you does not understand i will explain below ilke a 5 year child**
+ 
+**Code**
+import jakarta.persistence.Entity;
+
+@Entity
+public class Product {
+    private int id;
+    private String name;
+    private int price;
+}
+
+
+**What does @Entity do?
+When you annotate a class with @Entity, Spring and JPA:
+
+Treat the class as a table in the database.
+
+Each field becomes a column (unless marked otherwise).
+
+You can use @Id to mark the primary key.
+
+Spring Boot will automatically map the class to a table with the same name (or you can customize it).
+
+**----------Explination like a 5 yea child----------------**
+
+You're playing with toys, and each toy is special — like a car, a doll, or a robot.
+
+Now, imagine you're making a toy list in your notebook. You draw a car, give it a name, color, and how much it costs.
