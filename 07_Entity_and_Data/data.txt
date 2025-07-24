@@ -1,0 +1,15 @@
+What is @Data in Spring Boot? (Detailed Explanation)
+@Data is a special annotation from Lombok, a Java library.
+
+When you put @Data on a class, Lombok automatically creates all the common code for you — like:
+
+- getters (getName())
+- setters (setName())
+- toString() method
+- equals() and hashCode() methods
+- A constructor for all fields
+
+
+
+You must have Lombok installed in your project for @Data to work!
+
