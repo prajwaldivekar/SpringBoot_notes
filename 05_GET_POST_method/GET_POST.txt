@@ -1,0 +1,32 @@
+**What is GET Method?
+
+"Getting information from the server"
+
+**Example:
+You open Amazon and search "iPhone".
+It GETs the list of iPhones from the server and shows it.
+
+
+
+@GetMapping("/products")
+public List<Product> getAllProducts() {
+    return products;
+}
+----------------------------------------------------------------------------------------
+
+**What is POST Method?
+
+"Posting/sending new data to the server"
+
+**Example:
+You fill out a form to add a new product in your app.
+It POSTs the product data to the server to save it.
+
+
+@PostMapping("/products")
+public String addProduct(@RequestBody Product product) {
+    products.add(product);
+    return "Product added!";
+}
+
+----------------------------------------------------------------------------------------
