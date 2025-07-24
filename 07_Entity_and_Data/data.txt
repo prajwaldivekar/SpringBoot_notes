@@ -9,7 +9,21 @@ When you put @Data on a class, Lombok automatically creates all the common code 
 - equals() and hashCode() methods
 - A constructor for all fields
 
-
-
 You must have Lombok installed in your project for @Data to work!
+
+What is @Data? (Like a 5-Year-Old)
+Imagine you have a toy that can talk, show its name, change its color, and tell if it’s same as another toy.
+But you don’t want to build all that stuff every time.
+So, you put a magic sticker on it — ✨ @Data
+That sticker says:
+
+"Hey! Make this toy smart — let it speak, change itself, and compare with other toys!"
+
+Now your toy can:
+-Tell you its name (getter)
+-Let you change its name (setter)
+-Talk about itself (toString)
+-Check if it’s the same as another (equals)
+-And more — without extra work!
+
 
