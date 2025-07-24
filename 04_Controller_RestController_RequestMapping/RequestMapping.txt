@@ -1,0 +1,6 @@
+What is RequestMapping ?
+
+@RequestMapping connects a URL (like /home) to a method, so that when someone visits that URL, Spring knows which method to run.
+
+
+// @AllArgsConstructor
